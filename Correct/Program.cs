@@ -3,6 +3,7 @@ string select = Console.ReadLine();
 
 void GetCounts()
 {
+    bool a = false;
     int count = 0;
     char[] char1 = new char[] { '!', '?', ' ','.',',' };
     foreach (char word in select)
@@ -11,13 +12,19 @@ void GetCounts()
         {
             if (word == c)
             {
-                break;
+                a = true;
+                
             }
-
-            count++;
+           
+            
         }
+        if(a == false) 
+        { 
+            count++; 
+        }
+        a = false;
     }
-    Console.WriteLine($"{count}");
+    Console.WriteLine($"Количество букв в слове - {count}");
 }
 void GetConsonants()
 {
@@ -33,7 +40,7 @@ void GetConsonants()
             }
         }
     }
-    Console.WriteLine($"{count}");
+    Console.WriteLine($"Количество согласных в слове - {count}");
 }
 void GetVowels() 
 {
@@ -49,7 +56,7 @@ void GetVowels()
             }
         }
     }
-    Console.WriteLine($"{count1}");
+    Console.WriteLine($"Количество гласных в слове - {count1}");
 }
 void GetInfo()
 {
